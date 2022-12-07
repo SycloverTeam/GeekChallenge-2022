@@ -1,0 +1,13 @@
+# QWB 2019 Upload
+
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: ctftraining/base_image_nginx_mysql_php_56
+    container_name: not_stay
+    restart: always
+    ports:
+      - "0.0.0.0:9099:80"
