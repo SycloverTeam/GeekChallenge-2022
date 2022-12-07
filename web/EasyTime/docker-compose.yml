@@ -1,0 +1,12 @@
+version: "2"
+services:
+  test:
+    hostname: test
+    image: tomcat:8
+    volumes:
+      - "./target/EasyTime.war:/usr/local/tomcat/webapps/EasyTime.war"
+    ports:
+      - "38000:8080"
+    entrypoint:
+      - "catalina.sh"
+      - "run"
