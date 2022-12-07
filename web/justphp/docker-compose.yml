@@ -1,0 +1,7 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: ctftraining/base_image_nginx_php_56
+    ports:
+      - "10.0.0.5:2233:80"

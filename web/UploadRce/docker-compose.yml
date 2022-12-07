@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: rcechinfo/geekchallenge2022
+    ports:
+      - "192.168.0.123:2233:80"
+    environment:
+      - SYC{y0u_c@n_RCEME_n0w!}

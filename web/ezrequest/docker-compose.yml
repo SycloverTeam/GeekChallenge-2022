@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: requestchinfo/geekchallenge2022
+    ports:
+      - "192.168.0.123:2223:80"
+    environment:
+      - FLAG=SYC{just_@_ez_requ3st}
