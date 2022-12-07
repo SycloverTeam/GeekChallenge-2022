@@ -1,0 +1,24 @@
+version: "2"
+services:
+  web1:
+    build: 
+      context: ./web
+    ports:
+      - "8102:80"
+    tty: True
+    networks:
+      drinktea:
+        ipv4_address: 172.20.0.3
+  bot:
+    build:
+      context: ./xssbot
+    networks:
+      drinktea:
+        ipv4_address: 172.20.0.2
+
+networks:
+  drinktea:
+    ipam:
+      config:
+      - subnet: 172.20.0.0/16
+        gateway: 172.20.0.1
