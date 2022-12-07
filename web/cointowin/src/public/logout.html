@@ -1,0 +1,34 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>登出</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <form action="" method="" class="box">
+            <input id="login" type="submit" name="" value="LOGOUT">
+        </form>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#login").on("click",function(){
+            $.ajax({
+                url: "/v1/logout", 
+                type: "get",
+                success: function (result) {
+                    if(result=="needlogin"){
+                        window.top.location.replace("/login")
+                    }
+                    window.location("/login")
+                    },
+                    error: function (err) {
+                    alert("error retry");
+                    }
+                });
+        });
+    });
+
+    </script>

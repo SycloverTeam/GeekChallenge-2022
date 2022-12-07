@@ -1,0 +1,48 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>Play</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <div class="box">
+        <form>
+            <img src="image/cat.webp">
+            <div class="inputbox">
+            
+                <label> 
+                </label>
+                </div>
+                <input id="login" type="submit" name="" value="Play">
+                <h2 id="res"></h2>
+        </form>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#login").on("click",function(){
+            $.ajax({
+                url: "/v1/play", 
+                type: "GET",
+                success: function (result) {
+                    if(result=="needlogin"){
+                        window.top.location.replace("/login")
+                    }
+                    else if(result =="去/relief领低保吧")
+                    {
+                        alert(result)
+                        window.top.location.replace("/relief")
+                    }
+                    else{
+                        alert(result)
+                    }
+                    },
+                    error: function (err) {
+                    alert(err)
+                    }
+                });
+            });
+    });
+</script>

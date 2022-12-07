@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #34495e;	
+}
+.box {
+	background-color: #34495e;
+	width: 300px;
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	/* 
+		translate()函数是css3的新特性.在不知道自身宽高的情况下，可以利用它来进行水平垂直居中.。
+		当使用：top: 50%;left: 50%;， 是以左上角为原点，故不处于中心位置
+		translate(-50%,-50%) 作用是，往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置。
+	 */
+}
+.box input {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: #3498db 2px solid;
+	background-color:rgba(15, 34, 6, 0.463);
+	padding: 14px 10px;
+	/* width: 200px; */
+	width: auto;
+	outline: none;
+	color: white;
+	border-radius: 24px; 
+	/* 圆角弧度24px */
+	transition: 0.25s;
+}
+.box h1 {
+	transform: translate(-30%,-50%);
+	width: 800px;
+	text-align: center;
+	font-weight: 500;
+}
+.box input:hover {
+	/* width: auto; */
+	width: 240px;
+	border-color: #2ECC71;
+
+}
+.box input[type="submit"] {
+	width: 193px;
+	border-color: #2ecc71;
+	cursor: pointer;
+}
+.box input[type="submit"]:hover {
+	background-color: #2ECC71;
+}
+.box h2 {
+	transform: translate(-30%,-50%);
+	width: 800px;
+	text-align: center;
+	font-weight: 500;
+}

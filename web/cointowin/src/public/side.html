@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星际酒馆</title>
+    <link rel="stylesheet" href="./select.css">
+</head>
+
+<body>
+    <div class="bigbox">
+        <ul>
+            <li>
+                <a href="" onclick="return indexclick(event)">
+                    <script>
+                        function indexclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/place.png" alt="1" />
+                    <span>增脂小屋</span>
+                </a>
+            </li>
+            <li>
+                <a href="" onclick="return loginclick(event)">
+                    <script>
+                        function loginclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/login");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/login.png" alt="1">
+                    <span>登录</span>
+                </a>
+            </li>
+            <li>
+                <a href="" onclick="return reliefclick(event)">
+                    <script>
+                        function reliefclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/relief");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/relief.png" alt="1">
+                    <span>relief</span>
+                </a>
+            </li>
+            <li>
+                <a href="" onclick="return playclick(event)">
+                    <script>
+                        function playclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/play");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/play.png" alt="3">
+                    <span>play</span>
+                </a>
+            </li>
+            <li>
+                <a href="" onclick="return flagclick(event)">
+                    <script>
+                        function flagclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/flag");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/flag.png" alt="3">
+                    <span>flag</span>
+                </a>
+            </li>
+            <li>
+                <a href="" onclick="return importclick(event)">
+                    <script>
+                        function importclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/import");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/import.png" alt="4">
+                    <span>导入</span>
+                </a>
+            </li>
+            <li>
+                <a href="" onclick="return exportclick(event)">
+                    <script>
+                        function exportclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/export");
+                            return false;
+                        }
+                    </script>
+                    <img src="./image/export.png" alt="5">
+                    <span>导出</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="return logclick(event)">
+                    <img src="./image/logout.png" alt="2">
+                    <span>登出</span>
+                    <script>
+                        function logclick(e){
+                            e.preventDefault();
+                            window.top.location.replace("/logout");
+                            return false;
+                        }
+                    </script>
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</body>
+
+</html>

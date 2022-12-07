@@ -1,0 +1,45 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <div class="box">
+        <form>
+            <div class="inputbox">
+                <label> 
+                    <input id="username" type="text" name="" required="" value="username">
+                </label>
+                </div>
+            <input id="login"type="submit" name="" value="LOGIN">
+        </form>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#login").on("click",function(){
+            var username = $("#username").val();
+            var json = {"name":username};
+            $.ajax({
+                url: "/v1/login", 
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(json),
+                success: function (result) {
+                    if(result == "logined"){
+                        alert("you logined");
+                    }
+                    window.top.location.replace("/relief")
+                    },
+                    error: function (err) {
+                    window.top.location.replace("/relief")
+                    }
+                });
+        });
+    });
+
+    </script>

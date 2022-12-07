@@ -1,0 +1,44 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>import</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <div class="box">
+        <h2>input your save's json data</h2>
+        <form>
+            <div class="inputbox">
+                <label> 
+                    <input id="save" type="text" required="" value="save">
+                </label>
+                </div>
+            <input id="post"type="submit" value="submit">
+        </form>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#post").on("click",function(){
+            var savedata = $("#save").val();
+            console.log(savedata)
+            $.ajax({
+                url: "/v1/import", 
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(JSON.parse(savedata)),
+                success: function (result) {
+                    alert(result)
+                    if(result == "load successy")
+                    window.top.location.replace("/")
+                    },
+                    error: function (err) {
+                    alert(err)
+                    }
+                });
+        });
+    });
+</script>

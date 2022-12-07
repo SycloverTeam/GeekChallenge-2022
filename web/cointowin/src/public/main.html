@@ -1,0 +1,53 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <div class="box">
+        <h2>win 10000 coins and go to /play to make more money for /flag</h2>
+        <form>
+            
+            <div class="inputbox">
+            
+                <label> 
+                    <script type="text/javascript">
+                        //<!CDATA[
+                        var pic = [];
+                        pic[0] = "./image/coin__blue.png";
+                        pic[1] = "./image/coin__pink.png";
+                        pic[2] = "./image/coin__white.png";
+                    
+                        var randomBgIndex = Math.round( Math.random() * 2 );
+                    
+                        document.write("<img src=" + pic[randomBgIndex] +">")
+                        //]]>
+                    </script>
+                </label>
+                </div>
+            <h1 id="money">✖LOGIN</h1>
+        </form>
+    </div>
+</body>
+<script>
+
+    $.ajax({
+                url: "/v1/", 
+                type: "GET",
+                success: function (result) {
+                    if(result=="needlogin"){
+                        window.top.location.replace("/login")
+                    }
+                    else if(result=="undefined"){
+                        document.getElementById("money").innerHTML = "go to /relief for fist money";
+                    }
+                    else document.getElementById("money").innerHTML = "✖"+result;
+                    },
+                    error: function (err) {
+                    alert("err")
+                    }
+                });
+</script>

@@ -1,0 +1,48 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>Relief</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <div class="box">
+        <form>
+            
+            <div class="inputbox">
+                <h1 id="mes">input number of money more than 100 and less than 200 to get</h1>
+                <label> 
+                    
+                    <input id="money" type="text" name="" required="" value="101">
+                </label>
+                </div>
+                <input id="post"type="submit" name="" value="submit">
+        </form>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#post").on("click",function(){
+            var money = $("#money").val();
+            var json = {"coin":money};
+            $.ajax({
+                url: "/v1/relief", 
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(json),
+                success: function (result) {
+                    if(result=="needlogin"){
+                        window.top.location.replace("/login")
+                    }
+                    else window.top.location.replace("/")
+                    },
+                    error: function (err) {
+                    window.top.location.replace("/")
+                    }
+                });
+        });
+    });
+
+</script>

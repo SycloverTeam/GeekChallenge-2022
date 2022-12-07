@@ -1,0 +1,39 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<iframe src="side.html" width=200px height=100% frameborder="0" scrolling="no"></iframe> 
+<head>
+    <meta charset="UTF-8">
+    <title>flag</title>
+    <link rel="stylesheet" href="denglu.css">
+</head>
+<body>
+    <div class="box">
+        <form>
+            
+            <div class="inputbox">
+            
+                <label> 
+                </label>
+                </div>
+                <h2 id="res"></h2>
+        </form>
+    </div>
+</body>
+<script>
+    $.ajax({
+                url: "/v1/flag", 
+                type: "GET",
+                success: function (result) {
+                    if(result=="needlogin"){
+                        window.top.location.replace("/login")
+                    }
+                    else{
+                        document.getElementById("res").innerHTML=JSON.stringify(result)
+                    }
+                    },
+                    error: function (err) {
+                    alert("err")
+                    }
+                });
+
+</script>
