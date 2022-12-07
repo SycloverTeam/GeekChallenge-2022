@@ -1,0 +1,11 @@
+FROM registry.cn-hangzhou.aliyuncs.com/lxepoo/apache-php5
+
+
+RUN rm -rf /var/www/*
+ADD ./www /var/www/
+RUN rm -rf /usr/local/etc/php/conf.d/php.ini
+ADD ./php.ini /usr/local/etc/php/conf.d/
+RUN chown -R root:www-data /var/www/
+RUN chmod  555 /var/www/index.php
+RUN echo SYC{Th1s_is_RFI_hahaha!} > /flag
+
