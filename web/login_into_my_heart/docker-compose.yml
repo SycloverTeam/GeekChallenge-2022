@@ -1,0 +1,6 @@
+version: '2.2'
+services:
+ ezsertao:
+  build: .
+  ports: 
+   - "7010:80"
